@@ -5,40 +5,34 @@ import DetailsBar from 'components/DetailsBar';
 import { Outlet } from 'react-router-dom';
 
 export const MovieDetails = () => {
-  const [movieDetails, setMovieDetails] = useState([]);
+  const [movieDetails, setMovieDetails] = useState({});
   const { movieId } = useParams();
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
-
-  // const getGenres = ({ genres }) => {
-  //   const gen = genres.map(genre => genre.name);
-  //   return gen.join(' ');
-  // };
-
-  const getImgUrl = ({ poster_path }) => {
-    return `https://image.tmdb.org/t/p/w500/${poster_path}`;
-  };
 
   useEffect(() => {
     if (!movieId) {
       return;
     }
+
     async function fetchMovieDetails(movieId) {
       try {
-        setIsLoading(true);
         const data = await getMoviesDetaile(movieId);
-        console.log(data);
         setMovieDetails(data);
-
-        setIsLoading(false);
       } catch (error) {
-        setError(true);
-        setIsLoading(false);
         console.log({ error });
       }
     }
     fetchMovieDetails(movieId);
   }, [movieId]);
+
+  // const getGenres = ({ genres }) => {
+  //   const genr = genres.map(genre => genre.name);
+
+  //   return genr.join('');
+  // };
+
+  const getImgUrl = ({ poster_path }) => {
+    return `https://image.tmdb.org/t/p/w500/${poster_path}`;
+  };
 
   return (
     <div className="">

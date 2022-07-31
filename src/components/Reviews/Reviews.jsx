@@ -5,8 +5,6 @@ import { getMoviesReviews } from 'services/api';
 const Reviews = () => {
   const [movieReviews, setMovieReviews] = useState([]);
   const { movieId } = useParams();
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
 
   useEffect(() => {
     if (!movieId) {
@@ -14,14 +12,9 @@ const Reviews = () => {
     }
     async function fetchMoviesReviews(movieId) {
       try {
-        setIsLoading(true);
         const data = await getMoviesReviews(movieId);
-        console.log(data);
         setMovieReviews(data.results);
-        setIsLoading(false);
       } catch (error) {
-        setError(true);
-        setIsLoading(false);
         console.log({ error });
       }
     }

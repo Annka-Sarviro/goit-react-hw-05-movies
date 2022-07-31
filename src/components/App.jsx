@@ -6,7 +6,6 @@ import { Layout } from './Layout';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import Cast from './Cast';
 import Reviews from './Reviews';
-import DetailsBar from './DetailsBar';
 
 export const App = () => {
   return (

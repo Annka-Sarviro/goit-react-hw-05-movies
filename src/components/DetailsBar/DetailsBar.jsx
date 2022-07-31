@@ -2,14 +2,14 @@ import { NavLink } from 'react-router-dom';
 
 const DetailsBar = () => {
   return (
-    <nav>
+    <div>
       <li>
         <NavLink to={`cast`}>Cast</NavLink>
       </li>
       <li>
         <NavLink to={`reviews`}>Reviews</NavLink>
       </li>
-    </nav>
+    </div>
   );
 };
 

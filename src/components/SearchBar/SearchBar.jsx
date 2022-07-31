@@ -3,7 +3,6 @@ const SearchBar = ({ onSubmit }) => {
     e.preventDefault();
     const query = e.target.movie.value;
     onSubmit(query);
-    e.target.reset();
   };
   return (
     <div>

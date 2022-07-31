@@ -5,8 +5,6 @@ import { getMoviesCredits } from 'services/api';
 const Cast = () => {
   const [movieCredits, setMovieCredits] = useState([]);
   const { movieId } = useParams();
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
 
   const getCastImgUrl = ({ profile_path }) => {
     return profile_path
@@ -20,14 +18,9 @@ const Cast = () => {
     }
     async function fetchMoviesCredits(movieId) {
       try {
-        setIsLoading(true);
         const data = await getMoviesCredits(movieId);
-        console.log(data.cast);
         setMovieCredits(data.cast);
-        setIsLoading(false);
       } catch (error) {
-        setError(true);
-        setIsLoading(false);
         console.log({ error });
       }
     }
