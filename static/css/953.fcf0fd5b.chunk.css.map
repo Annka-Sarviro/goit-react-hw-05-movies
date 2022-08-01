@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/953.fcf0fd5b.chunk.css","mappings":"AAAA,6BACE,iBAAkB,CAClB,kBACF,CAEA,mBACE,aAAc,CACd,kBACF","sources":["pages/Home/Home.module.css"],"sourcesContent":[".tranding_movies {\n  padding-left: 40px;\n  padding-right: 40px;\n}\n\n.title {\n  color: #411530;\n  margin-bottom: 10px;\n}\n"],"names":[],"sourceRoot":""}

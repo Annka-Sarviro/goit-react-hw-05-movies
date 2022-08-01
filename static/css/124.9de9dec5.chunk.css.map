@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/124.9de9dec5.chunk.css","mappings":"AAAA,sBAGE,eAAgB,CAFhB,iBAAkB,CAClB,kBAEF","sources":["pages/Movies/Movies.module.css"],"sourcesContent":[".movies {\n  padding-left: 40px;\n  padding-right: 40px;\n  margin-top: 20px;\n}\n"],"names":[],"sourceRoot":""}
