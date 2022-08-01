@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styles from './DetailsBar.module.css';
+import PropTypes from 'prop-types';
 
 const DetailsBar = ({ linkBack }) => {
   return (
@@ -22,3 +23,7 @@ const DetailsBar = ({ linkBack }) => {
 };
 
 export default DetailsBar;
+
+DetailsBar.propTypes = {
+  linkBack: PropTypes.object,
+};

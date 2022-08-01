@@ -1,11 +1,14 @@
 import { NavLink } from 'react-router-dom';
+import styles from './NotFoundPage.module.css';
 
 export const NotFoundPage = () => {
   return (
     <div>
-      <h1>Page not found</h1>
+      <h1 className={styles.title}>Page not found</h1>
       <li>
-        <NavLink to={'/'}>Home</NavLink>
+        <NavLink to={'/'} className={styles.homeBtn}>
+          Home
+        </NavLink>
       </li>
     </div>
   );

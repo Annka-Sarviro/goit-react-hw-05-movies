@@ -1,4 +1,5 @@
 import styles from './CastCard.module.css';
+import PropTypes from 'prop-types';
 
 const CastCard = ({ cast, castImgUrl }) => {
   return (
@@ -17,3 +18,12 @@ const CastCard = ({ cast, castImgUrl }) => {
 };
 
 export default CastCard;
+
+CastCard.propTypes = {
+  castImgUrl: PropTypes.string,
+  cast: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    profile_path: PropTypes.string,
+  }),
+};

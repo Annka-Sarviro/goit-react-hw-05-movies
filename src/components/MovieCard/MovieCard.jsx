@@ -1,7 +1,8 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import styles from './MovieCard.module.css';
+import PropTypes from 'prop-types';
 
-const TrandingCard = ({ movie }) => {
+const MovieCard = ({ movie }) => {
   const location = useLocation();
   return (
     <li key={movie.id} className={styles.item}>
@@ -17,4 +18,12 @@ const TrandingCard = ({ movie }) => {
   );
 };
 
-export default TrandingCard;
+export default MovieCard;
+
+MovieCard.propTypes = {
+  movie: PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    profile_path: PropTypes.string,
+  }),
+};

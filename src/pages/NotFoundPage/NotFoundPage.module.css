@@ -1,0 +1,15 @@
+.homeBtn {
+  display: inline-block;
+  background-color: #411530;
+  color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  margin-left: 40px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.title {
+  margin-left: 40px;
+  color: #411530;
+}
