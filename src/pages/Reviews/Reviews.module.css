@@ -1,0 +1,12 @@
+.author {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.text {
+  font-size: 10px;
+}
+
+.list:not(:last-child) {
+  margin-bottom: 10px;
+}

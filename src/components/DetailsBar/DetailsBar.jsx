@@ -1,14 +1,22 @@
 import { NavLink } from 'react-router-dom';
+import styles from './DetailsBar.module.css';
 
-const DetailsBar = () => {
+const DetailsBar = ({ linkBack }) => {
   return (
     <div>
-      <li>
-        <NavLink to={`cast`}>Cast</NavLink>
-      </li>
-      <li>
-        <NavLink to={`reviews`}>Reviews</NavLink>
-      </li>
+      <h3>Additional infotmation</h3>
+      <ul className={styles.list}>
+        <li className={styles.link}>
+          <NavLink to={`cast`} state={{ from: linkBack }}>
+            Cast
+          </NavLink>
+        </li>
+        <li className={styles.link}>
+          <NavLink to={`reviews`} state={{ from: linkBack }}>
+            Reviews
+          </NavLink>
+        </li>
+      </ul>
     </div>
   );
 };

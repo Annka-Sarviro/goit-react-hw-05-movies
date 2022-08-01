@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMoviesCredits } from 'services/api';
+import CastCard from 'components/CastCard';
+import styles from './Cast.module.css';
 
-const Cast = () => {
+export const Cast = () => {
   const [movieCredits, setMovieCredits] = useState([]);
   const { movieId } = useParams();
 
@@ -29,18 +31,21 @@ const Cast = () => {
 
   return (
     <div>
-      <ul>
-        {movieCredits.map(cast => {
-          return (
-            <li key={cast.id}>
-              <p> {cast.name}</p>
-              <img src={getCastImgUrl(cast)} alt={cast.name} width="40" />
-            </li>
-          );
-        })}
+      <ul className={styles.list}>
+        {movieCredits.length > 0 ? (
+          movieCredits.slice(0, 20).map(cast => {
+            return (
+              <CastCard
+                cast={cast}
+                castImgUrl={getCastImgUrl(cast)}
+                key={cast.id}
+              />
+            );
+          })
+        ) : (
+          <p>Not Casts</p>
+        )}
       </ul>
     </div>
   );
 };
-
-export default Cast;

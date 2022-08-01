@@ -1,6 +1,7 @@
-import { getTranding } from '../services/api';
+import { getTranding } from '../../services/api';
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import styles from './Home.module.css';
+import MoviesList from 'components/MovieList';
 
 export const Home = () => {
   const [trandingMovies, setTrandingMovies] = useState([]);
@@ -20,17 +21,9 @@ export const Home = () => {
 
   return (
     <>
-      <div className="">
-        <h1>Tranding Movies</h1>
-        <ul>
-          {trandingMovies.map(movie => {
-            return (
-              <li key={movie.id}>
-                <NavLink to={`/movies/${movie.id}`}>{movie.title}</NavLink>
-              </li>
-            );
-          })}
-        </ul>
+      <div className={styles.tranding_movies}>
+        <h1 className={styles.title}>Tranding Movies</h1>
+        <MoviesList movies={trandingMovies} />
       </div>
       ;
     </>

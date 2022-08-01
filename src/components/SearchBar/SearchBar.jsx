@@ -1,4 +1,6 @@
-const SearchBar = ({ onSubmit }) => {
+import styles from './SearchBar.module.css';
+
+const SearchBar = ({ onSubmit, searchQuery }) => {
   const handleSubmit = e => {
     e.preventDefault();
     const query = e.target.movie.value;
@@ -6,17 +8,19 @@ const SearchBar = ({ onSubmit }) => {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <label>
           <input
             type="text"
             name="movie"
             autoComplete="off"
             autoFocus
-            placeholder="Search movie"
+            placeholder={searchQuery ? searchQuery : 'Search movie'}
           ></input>
         </label>
-        <button type="submit">Search</button>
+        <button type="submit" className={styles.button}>
+          Search
+        </button>
       </form>
     </div>
   );
